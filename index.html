@@ -1,47 +1,222 @@
-<section class="section" id="about">
-  <div class="section-title reveal">
-    <p>Part 1</p>
-    <h2>About Me</h2>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zachary Navea | General Chemistry Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-  <div class="about-box reveal">
-    <p>
-      My name is <strong>Zachary Navea</strong>, and I am 17 years old.
-      I am a STEM student who is interested in coding and technology.
-      I enjoy learning how things work, especially when it involves
-      computers, programs, and logical thinking.
-    </p>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Zachary<span>.</span></a>
 
-    <p>
-      Coding helps me practice creativity because I can create something
-      useful from simple ideas. I also like problem solving because it
-      challenges me to think carefully, analyze situations, and find the
-      best solution.
-    </p>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#matter">Matter</a></li>
+        <li><a href="#reflection">Reflection</a></li>
+        <li><a href="#thankyou">Thank You</a></li>
+      </ul>
 
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Strand</h3>
-        <p>STEM</p>
-      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </nav>
+  </header>
 
-      <div class="info-card">
-        <h3>Hobbies</h3>
-        <p>Coding, exploring technology, and learning new digital skills.</p>
-      </div>
+  <section class="hero" id="home">
+    <div class="hero-content reveal">
+      <p class="tagline">General Chemistry Portfolio</p>
+      <h1>Science, Matter, and Coding</h1>
+      <p class="hero-text">
+        A professional science portfolio that connects General Chemistry concepts
+        with coding, logical thinking, and real-life examples of matter.
+      </p>
 
-      <div class="info-card">
-        <h3>Interests</h3>
-        <p>General Chemistry, problem solving, logical thinking, and computer programming.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn primary">View Portfolio</a>
+        <a href="#matter" class="btn secondary">Explore Matter</a>
       </div>
     </div>
 
-    <div class="skills">
-      <span>STEM</span>
-      <span>Coding</span>
-      <span>Technology</span>
-      <span>Problem Solving</span>
-      <span>General Chemistry</span>
+    <div class="hero-card reveal">
+      <div class="atom-mark">⚛</div>
+      <h3>STEM Student</h3>
+      <h2>Zachary Navea</h2>
+      <p>Age 17 | Coding | General Chemistry</p>
+
+      <div class="code-box">
+        <span class="code-purple">const</span> student = {<br>
+        &nbsp;&nbsp;name: <span class="code-green">"Zachary Navea"</span>,<br>
+        &nbsp;&nbsp;strand: <span class="code-green">"STEM"</span>,<br>
+        &nbsp;&nbsp;focus: [<span class="code-green">"Coding"</span>, <span class="code-green">"Gen Chem"</span>]<br>
+        };
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <main>
+
+    <section class="section" id="about">
+      <div class="section-title reveal">
+        <span>Part 1</span>
+        <h2>About Me</h2>
+      </div>
+
+      <div class="about-box reveal">
+        <p>
+          My name is <strong>Zachary Navea</strong>, and I am 17 years old.
+          I am a STEM student who is interested in coding and technology.
+          I enjoy learning how things work, especially when it involves
+          computers, programs, and logical thinking.
+        </p>
+
+        <p>
+          Coding helps me practice creativity because I can create something
+          useful from simple ideas. I also like problem solving because it
+          challenges me to think carefully, analyze situations, and find the
+          best solution.
+        </p>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>Strand</h3>
+            <p>STEM</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Hobbies</h3>
+            <p>Coding, exploring technology, and learning new digital skills.</p>
+          </div>
+
+          <div class="info-card">
+            <h3>Interests</h3>
+            <p>General Chemistry, problem solving, logical thinking, and computer programming.</p>
+          </div>
+        </div>
+
+        <div class="skills">
+          <span>STEM</span>
+          <span>Coding</span>
+          <span>Technology</span>
+          <span>Problem Solving</span>
+          <span>General Chemistry</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="matter">
+      <div class="section-title reveal">
+        <span>Part 2</span>
+        <h2>Matter in My Life</h2>
+      </div>
+
+      <div class="intro-card reveal">
+        <p>
+          Matter is anything that has mass and occupies space. Many objects
+          and substances that I use or encounter every day are examples of
+          matter because they have physical properties such as shape, size,
+          color, texture, mass, and state.
+        </p>
+      </div>
+
+      <div class="matter-grid">
+        <div class="matter-card reveal">
+          <div class="icon">📘</div>
+          <h3>Notebook</h3>
+          <p class="state">State of Matter: Solid</p>
+          <p>
+            A notebook is a solid because it has a definite shape and volume.
+            It has physical properties such as color, thickness, size, and
+            texture. The paper inside it is also matter because it occupies
+            space and has mass.
+          </p>
+        </div>
+
+        <div class="matter-card reveal">
+          <div class="icon">🖊️</div>
+          <h3>Pen</h3>
+          <p class="state">State of Matter: Solid and Liquid</p>
+          <p>
+            A pen is a solid because it has a fixed shape and volume. It has
+            physical properties such as length, color, weight, and smooth
+            texture. The ink inside the pen is a liquid because it flows and
+            takes the shape of its container.
+          </p>
+        </div>
+
+        <div class="matter-card reveal">
+          <div class="icon">💨</div>
+          <h3>Air I Breathe</h3>
+          <p class="state">State of Matter: Gas</p>
+          <p>
+            Air is a gas because it does not have a fixed shape or volume.
+            It spreads out and fills the space around it. Even though we
+            cannot see air, it is still matter because it has mass and
+            occupies space.
+          </p>
+        </div>
+      </div>
+
+      <div class="summary-card reveal">
+        <p>
+          These examples show that matter exists in different states: solid,
+          liquid, and gas. They also prove that the objects and substances I
+          use or encounter every day can be described through their physical
+          properties.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="reflection">
+      <div class="section-title reveal">
+        <span>Part 3</span>
+        <h2>Reflection</h2>
+      </div>
+
+      <div class="reflection-box reveal">
+        <p>
+          After learning about matter, measurement, atomic theory, and
+          fundamental particles, I realized that everything around me is made
+          up of tiny particles that are too small to see with the naked eye.
+          I learned that matter is not only about objects we can touch, but
+          also about the particles that make up those objects.
+        </p>
+
+        <p>
+          Measurement is important because it helps us describe matter
+          accurately using numbers and units. Atomic theory helped me
+          understand that atoms are the building blocks of matter. I also
+          realized that fundamental particles, such as protons, neutrons, and
+          electrons, are important in understanding how atoms behave.
+        </p>
+
+        <p>
+          This lesson made me appreciate science more because it explains many
+          things that happen in everyday life. I now understand that even
+          simple things like notebooks, pens, and air have scientific
+          explanations behind them. Learning these topics showed me that
+          science is connected to the real world. It also helped me become
+          more curious about how matter works and how everything in the
+          universe is formed.
+        </p>
+      </div>
+    </section>
+
+    <section class="thankyou-section" id="thankyou">
+      <div class="thankyou-card reveal">
+        <p>End of Portfolio</p>
+        <h2>THANK YOU</h2>
+        <span>Science • Coding • General Chemistry</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Zachary Navea | General Chemistry Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

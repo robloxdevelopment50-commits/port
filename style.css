@@ -1,3 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: #050816;
+  --dark-2: #0b1120;
+  --dark-3: #111827;
+
+  --card: rgba(15, 23, 42, 0.82);
+  --card-2: rgba(30, 41, 59, 0.72);
+
+  --text: #f8fafc;
+  --soft: #cbd5e1;
+  --muted: #94a3b8;
+
+  --cyan: #22d3ee;
+  --blue: #38bdf8;
+  --purple: #8b5cf6;
+  --pink: #ec4899;
+  --green: #34d399;
+  --yellow: #facc15;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.75;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.18), transparent 26%),
+    radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.2), transparent 28%),
+    radial-gradient(circle at 20% 85%, rgba(52, 211, 153, 0.12), transparent 26%),
+    linear-gradient(135deg, #050816 0%, #0b1120 48%, #020617 100%);
+  position: relative;
+}
+
+/* Professional coding + chemistry background grid */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* Gen Chem + Coding watermark */
+body::after {
+  content:
+    "const matter = ['solid', 'liquid', 'gas'];    H2O   CO2   NaCl   O2   pH   mol   atom   proton   neutron   electron;    "
+    "function observeMatter() { return 'General Chemistry + Coding'; }    measurement.mass.volume();    "
+    "if (curiosity === true) { analyze(); solve(); create(); }";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  padding: 105px 35px;
+  font-family: "Courier New", monospace;
+  font-size: 15px;
+  line-height: 3.2;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.045);
+  white-space: pre-wrap;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+  max-width: 1180px;
+  margin: auto;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  color: var(--cyan);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--soft);
+  font-size: 0.95rem;
+  font-weight: 700;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  max-width: 1180px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 140px 25px 90px;
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 45px;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "</>  General Chemistry  •  Atomic Theory  •  Matter  •  Measurement";
+  position: absolute;
+  top: 115px;
+  right: 25px;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: rgba(125, 211, 252, 0.35);
+  letter-spacing: 2px;
+}
+
+.tagline {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  color: #a5f3fc;
+  background: rgba(34, 211, 238, 0.12);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin-bottom: 20px;
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: -2px;
+}
+
+.hero h1::after {
+  content: ".";
+  color: var(--cyan);
+}
+
+.hero-text {
+  max-width: 680px;
+  margin-bottom: 32px;
+  color: var(--soft);
+  font-size: 1.08rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 25px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.primary {
+  color: #020617;
+  background: linear-gradient(90deg, var(--cyan), var(--blue), var(--purple));
+  box-shadow: 0 14px 35px rgba(56, 189, 248, 0.25);
+}
+
+.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.35);
+}
+
+.secondary {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.secondary:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.5);
+  background: rgba(139, 92, 246, 0.12);
+}
+
+/* HERO CARD */
+.hero-card {
+  padding: 35px;
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
+    rgba(15, 23, 42, 0.82);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background:
+    radial-gradient(circle at top left, rgba(34, 211, 238, 0.25), transparent 36%),
+    radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.2), transparent 40%);
+  z-index: -1;
+}
+
+.atom-mark {
+  position: absolute;
+  right: 25px;
+  top: 16px;
+  font-size: 5.5rem;
+  color: rgba(255, 255, 255, 0.07);
+}
+
+.hero-card h3 {
+  margin-bottom: 10px;
+  color: var(--cyan);
+  font-size: 1.35rem;
+}
+
+.hero-card h2 {
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 2.1rem;
+  line-height: 1.1;
+}
+
+.hero-card p {
+  color: var(--muted);
+}
+
+.code-box {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(2, 6, 23, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #a5f3fc;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.code-purple {
+  color: #c084fc;
+}
+
+.code-green {
+  color: #86efac;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 1180px;
+  margin: auto;
+  padding: 95px 25px;
+}
+
+.section-title {
+  margin-bottom: 35px;
+}
+
+.section-title span {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.25);
+  color: #f9a8d4;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.section-title h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  letter-spacing: -1px;
+}
+
+/* CONTENT BOXES */
+.about-box,
+.intro-card,
+.summary-card,
+.reflection-box {
+  padding: 32px;
+  border-radius: 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-box::before,
+.intro-card::before,
+.summary-card::before,
+.reflection-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink), var(--green));
+}
+
+.about-box p,
+.intro-card p,
+.summary-card p,
+.reflection-box p {
+  margin-bottom: 18px;
+  color: var(--soft);
+}
+
+.about-box p:last-child,
+.intro-card p:last-child,
+.summary-card p:last-child,
+.reflection-box p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  color: #ffffff;
+}
+
+/* PART 1 INFO */
 .info-grid {
   margin-top: 28px;
   display: grid;
@@ -21,17 +425,309 @@
 
 .info-card h3 {
   margin-bottom: 8px;
-  color: #22d3ee;
+  color: var(--cyan);
   font-size: 1.05rem;
 }
 
 .info-card p {
   margin-bottom: 0;
-  color: #cbd5e1;
+  color: var(--soft);
 }
 
-@media (max-width: 850px) {
+/* SKILLS */
+.skills {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills span {
+  padding: 10px 16px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+/* MATTER CARDS */
+.matter-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin: 35px 0;
+}
+
+.matter-card {
+  min-height: 100%;
+  padding: 30px;
+  border-radius: 28px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+  transition: 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.matter-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.matter-card:nth-child(1)::before {
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 35%);
+}
+
+.matter-card:nth-child(2)::before {
+  background: radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 35%);
+}
+
+.matter-card:nth-child(3)::before {
+  background: radial-gradient(circle at top left, rgba(52, 211, 153, 0.25), transparent 35%);
+}
+
+.matter-card::after {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.matter-card:nth-child(1)::after {
+  content: "state: solid";
+}
+
+.matter-card:nth-child(2)::after {
+  content: "solid + liquid";
+}
+
+.matter-card:nth-child(3)::after {
+  content: "state: gas";
+}
+
+.matter-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.45);
+}
+
+.icon {
+  width: 62px;
+  height: 62px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.22), rgba(139, 92, 246, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.matter-card h3 {
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.state {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--yellow);
+  background: rgba(250, 204, 21, 0.09);
+  border: 1px solid rgba(250, 204, 21, 0.18);
+  font-weight: 900;
+  font-size: 0.88rem;
+}
+
+.matter-card p {
+  color: var(--soft);
+}
+
+/* REFLECTION */
+.reflection-box {
+  border-left: 5px solid transparent;
+  border-image: linear-gradient(to bottom, var(--cyan), var(--purple), var(--pink)) 1;
+}
+
+/* THANK YOU */
+.thankyou-section {
+  max-width: 1180px;
+  margin: auto;
+  padding: 110px 25px 130px;
+}
+
+.thankyou-card {
+  text-align: center;
+  padding: 70px 25px;
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(139, 92, 246, 0.14), rgba(236, 72, 153, 0.12)),
+    rgba(15, 23, 42, 0.82);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+}
+
+.thankyou-card::before {
+  content: "⚛ </> H2O CO2 NaCl";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+  letter-spacing: 8px;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+.thankyou-card p {
+  position: relative;
+  z-index: 1;
+  color: var(--cyan);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.thankyou-card h2 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(3.8rem, 12vw, 9rem);
+  line-height: 1;
+  font-weight: 1000;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow:
+    0 0 25px rgba(34, 211, 238, 0.45),
+    0 0 50px rgba(139, 92, 246, 0.35);
+}
+
+.thankyou-card span {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--soft);
+  font-weight: 700;
+}
+
+/* FOOTER */
+.footer {
+  padding: 28px 20px;
+  text-align: center;
+  color: var(--muted);
+  background: rgba(2, 6, 23, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .matter-grid,
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    right: 22px;
+    width: 230px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 16px 18px;
+  }
+
+  .hero {
+    padding: 125px 18px 70px;
+  }
+
+  .section {
+    padding: 80px 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-card,
+  .about-box,
+  .intro-card,
+  .summary-card,
+  .reflection-box,
+  .matter-card {
+    padding: 24px;
+  }
+
+  body::after {
+    font-size: 11px;
+    padding: 95px 18px;
+  }
+
+  .thankyou-card {
+    padding: 55px 18px;
+  }
+
+  .thankyou-card h2 {
+    font-size: 3.5rem;
   }
 }

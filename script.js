@@ -1,9 +1,11 @@
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+if (menuBtn && navLinks) {
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+}
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
@@ -13,7 +15,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealOnScroll = () => {
+function revealOnScroll() {
   revealElements.forEach((element) => {
     const windowHeight = window.innerHeight;
     const elementTop = element.getBoundingClientRect().top;
@@ -23,7 +25,7 @@ const revealOnScroll = () => {
       element.classList.add("active");
     }
   });
-};
+}
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
