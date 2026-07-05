@@ -6,23 +6,17 @@
 
 :root {
   --dark: #050816;
-  --dark-2: #0b1120;
-  --dark-3: #111827;
-
-  --card: rgba(15, 23, 42, 0.82);
-  --card-2: rgba(30, 41, 59, 0.72);
-
+  --card: rgba(15, 23, 42, 0.84);
+  --card2: rgba(30, 41, 59, 0.72);
   --text: #f8fafc;
   --soft: #cbd5e1;
   --muted: #94a3b8;
-
   --cyan: #22d3ee;
   --blue: #38bdf8;
   --purple: #8b5cf6;
   --pink: #ec4899;
   --green: #34d399;
   --yellow: #facc15;
-
   --border: rgba(255, 255, 255, 0.12);
   --shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
 }
@@ -46,7 +40,6 @@ body {
   position: relative;
 }
 
-/* Professional coding + chemistry background grid */
 body::before {
   content: "";
   position: fixed;
@@ -59,7 +52,6 @@ body::before {
   background-size: 44px 44px;
 }
 
-/* Gen Chem + Coding watermark */
 body::after {
   content:
     "const matter = ['solid', 'liquid', 'gas'];    H2O   CO2   NaCl   O2   pH   mol   atom   proton   neutron   electron;    "
@@ -87,9 +79,15 @@ a {
   position: fixed;
   top: 0;
   z-index: 1000;
-  background: rgba(2, 6, 23, 0.75);
+  background: rgba(2, 6, 23, 0.72);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(2, 6, 23, 0.92);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .navbar {
@@ -102,10 +100,9 @@ a {
 }
 
 .logo {
-  color: #ffffff;
+  color: white;
   font-size: 1.55rem;
   font-weight: 900;
-  letter-spacing: 0.5px;
 }
 
 .logo span {
@@ -114,7 +111,6 @@ a {
 
 .nav-links {
   display: flex;
-  align-items: center;
   gap: 26px;
   list-style: none;
 }
@@ -124,7 +120,7 @@ a {
   font-size: 0.95rem;
   font-weight: 700;
   position: relative;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .nav-links a::after {
@@ -134,16 +130,17 @@ a {
   bottom: -7px;
   width: 0;
   height: 2px;
-  border-radius: 999px;
   background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #ffffff;
+.nav-links a:hover,
+.nav-links a.active {
+  color: white;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
 }
 
@@ -151,12 +148,11 @@ a {
   display: none;
   background: none;
   border: none;
-  color: #ffffff;
+  color: white;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* HERO */
 .hero {
   max-width: 1180px;
   min-height: 100vh;
@@ -199,7 +195,7 @@ a {
   margin-bottom: 20px;
   font-size: clamp(2.6rem, 6vw, 5.2rem);
   line-height: 1.05;
-  color: #ffffff;
+  color: white;
   letter-spacing: -2px;
 }
 
@@ -228,7 +224,7 @@ a {
   padding: 13px 25px;
   border-radius: 999px;
   font-weight: 800;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .primary {
@@ -237,45 +233,51 @@ a {
   box-shadow: 0 14px 35px rgba(56, 189, 248, 0.25);
 }
 
-.primary:hover {
+.primary:hover,
+.secondary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 45px rgba(56, 189, 248, 0.35);
 }
 
 .secondary {
-  color: #ffffff;
+  color: white;
   background: rgba(255, 255, 255, 0.045);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.secondary:hover {
-  transform: translateY(-4px);
-  border-color: rgba(139, 92, 246, 0.5);
-  background: rgba(139, 92, 246, 0.12);
+.hero-stats {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 650px;
 }
 
-/* HERO CARD */
+.hero-stats div {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-stats h3 {
+  color: var(--cyan);
+  font-size: 1rem;
+}
+
+.hero-stats p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
 .hero-card {
   padding: 35px;
   border-radius: 28px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03)),
-    rgba(15, 23, 42, 0.82);
+  background: var(--card);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background:
-    radial-gradient(circle at top left, rgba(34, 211, 238, 0.25), transparent 36%),
-    radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.2), transparent 40%);
-  z-index: -1;
 }
 
 .atom-mark {
@@ -287,16 +289,15 @@ a {
 }
 
 .hero-card h3 {
-  margin-bottom: 10px;
   color: var(--cyan);
   font-size: 1.35rem;
+  margin-bottom: 10px;
 }
 
 .hero-card h2 {
-  margin-bottom: 8px;
-  color: #ffffff;
+  color: white;
   font-size: 2.1rem;
-  line-height: 1.1;
+  margin-bottom: 8px;
 }
 
 .hero-card p {
@@ -315,15 +316,14 @@ a {
   line-height: 1.7;
 }
 
-.code-purple {
+.purple {
   color: #c084fc;
 }
 
-.code-green {
+.green {
   color: #86efac;
 }
 
-/* SECTIONS */
 .section {
   max-width: 1180px;
   margin: auto;
@@ -349,16 +349,92 @@ a {
 }
 
 .section-title h2 {
-  color: #ffffff;
+  color: white;
   font-size: clamp(2rem, 4vw, 3.1rem);
-  letter-spacing: -1px;
 }
 
-/* CONTENT BOXES */
+.about-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 28px;
+}
+
+.profile-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.profile-card::before {
+  content: "⚛ </> GEN CHEM";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  color: #a5f3fc;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.profile-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.92), transparent 55%);
+  pointer-events: none;
+}
+
+.profile-info {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 3;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.profile-info span {
+  color: var(--cyan);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.profile-info h3 {
+  color: white;
+  font-size: 1.55rem;
+  margin: 8px 0 5px;
+}
+
+.profile-info p {
+  color: var(--soft);
+}
+
 .about-box,
 .intro-card,
 .summary-card,
-.reflection-box {
+.reflection-box,
+.matter-card,
+.concept-card {
   padding: 32px;
   border-radius: 28px;
   background: var(--card);
@@ -385,23 +461,17 @@ a {
 .about-box p,
 .intro-card p,
 .summary-card p,
-.reflection-box p {
-  margin-bottom: 18px;
+.reflection-box p,
+.matter-card p,
+.concept-card p {
   color: var(--soft);
-}
-
-.about-box p:last-child,
-.intro-card p:last-child,
-.summary-card p:last-child,
-.reflection-box p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 18px;
 }
 
 strong {
-  color: #ffffff;
+  color: white;
 }
 
-/* PART 1 INFO */
 .info-grid {
   margin-top: 28px;
   display: grid;
@@ -414,27 +484,13 @@ strong {
   border-radius: 20px;
   background: rgba(2, 6, 23, 0.38);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(34, 211, 238, 0.35);
-  background: rgba(15, 23, 42, 0.65);
 }
 
 .info-card h3 {
-  margin-bottom: 8px;
   color: var(--cyan);
-  font-size: 1.05rem;
+  margin-bottom: 8px;
 }
 
-.info-card p {
-  margin-bottom: 0;
-  color: var(--soft);
-}
-
-/* SKILLS */
 .skills {
   margin-top: 25px;
   display: flex;
@@ -445,14 +501,13 @@ strong {
 .skills span {
   padding: 10px 16px;
   border-radius: 999px;
-  color: #ffffff;
+  color: white;
   background: linear-gradient(90deg, rgba(34, 211, 238, 0.18), rgba(139, 92, 246, 0.2));
   border: 1px solid rgba(255, 255, 255, 0.13);
   font-size: 0.9rem;
   font-weight: 800;
 }
 
-/* MATTER CARDS */
 .matter-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -460,64 +515,24 @@ strong {
   margin: 35px 0;
 }
 
-.matter-card {
-  min-height: 100%;
-  padding: 30px;
-  border-radius: 28px;
-  background: var(--card-2);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
-  transition: 0.35s ease;
-  position: relative;
-  overflow: hidden;
+.concept-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 35px 0;
 }
 
-.matter-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.55;
-  pointer-events: none;
+.matter-card,
+.concept-card {
+  background: var(--card2);
+  transition: 0.35s;
 }
 
-.matter-card:nth-child(1)::before {
-  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), transparent 35%);
-}
-
-.matter-card:nth-child(2)::before {
-  background: radial-gradient(circle at top left, rgba(139, 92, 246, 0.25), transparent 35%);
-}
-
-.matter-card:nth-child(3)::before {
-  background: radial-gradient(circle at top left, rgba(52, 211, 153, 0.25), transparent 35%);
-}
-
-.matter-card::after {
-  position: absolute;
-  right: 22px;
-  top: 18px;
-  font-family: "Courier New", monospace;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.18);
-}
-
-.matter-card:nth-child(1)::after {
-  content: "state: solid";
-}
-
-.matter-card:nth-child(2)::after {
-  content: "solid + liquid";
-}
-
-.matter-card:nth-child(3)::after {
-  content: "state: gas";
-}
-
-.matter-card:hover {
-  transform: translateY(-10px);
+.matter-card:hover,
+.concept-card:hover,
+.info-card:hover {
+  transform: translateY(-8px);
   border-color: rgba(34, 211, 238, 0.35);
-  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.45);
 }
 
 .icon {
@@ -532,10 +547,11 @@ strong {
   border: 1px solid rgba(255, 255, 255, 0.13);
 }
 
-.matter-card h3 {
-  margin-bottom: 8px;
-  color: #ffffff;
+.matter-card h3,
+.concept-card h3 {
+  color: white;
   font-size: 1.35rem;
+  margin-bottom: 8px;
 }
 
 .state {
@@ -550,17 +566,10 @@ strong {
   font-size: 0.88rem;
 }
 
-.matter-card p {
-  color: var(--soft);
-}
-
-/* REFLECTION */
 .reflection-box {
-  border-left: 5px solid transparent;
-  border-image: linear-gradient(to bottom, var(--cyan), var(--purple), var(--pink)) 1;
+  border-left: 5px solid var(--cyan);
 }
 
-/* THANK YOU */
 .thankyou-section {
   max-width: 1180px;
   margin: auto;
@@ -576,27 +585,9 @@ strong {
     rgba(15, 23, 42, 0.82);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
-  position: relative;
-  overflow: hidden;
-}
-
-.thankyou-card::before {
-  content: "⚛ </> H2O CO2 NaCl";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-family: "Courier New", monospace;
-  font-size: 1.1rem;
-  letter-spacing: 8px;
-  color: rgba(255, 255, 255, 0.05);
-  pointer-events: none;
 }
 
 .thankyou-card p {
-  position: relative;
-  z-index: 1;
   color: var(--cyan);
   font-weight: 900;
   letter-spacing: 2px;
@@ -605,28 +596,21 @@ strong {
 }
 
 .thankyou-card h2 {
-  position: relative;
-  z-index: 1;
   font-size: clamp(3.8rem, 12vw, 9rem);
   line-height: 1;
-  font-weight: 1000;
-  letter-spacing: 3px;
-  color: #ffffff;
+  color: white;
   text-shadow:
     0 0 25px rgba(34, 211, 238, 0.45),
     0 0 50px rgba(139, 92, 246, 0.35);
 }
 
 .thankyou-card span {
-  position: relative;
-  z-index: 1;
   display: inline-block;
   margin-top: 18px;
   color: var(--soft);
   font-weight: 700;
 }
 
-/* FOOTER */
 .footer {
   padding: 28px 20px;
   text-align: center;
@@ -635,7 +619,6 @@ strong {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ANIMATION */
 .reveal {
   opacity: 0;
   transform: translateY(45px);
@@ -647,11 +630,16 @@ strong {
   transform: translateY(0);
 }
 
-/* RESPONSIVE */
+@media (max-width: 1050px) {
+  .concept-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 950px) {
-  .hero {
+  .hero,
+  .about-layout {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 
   .hero::before {
@@ -671,12 +659,10 @@ strong {
     padding: 20px;
     display: none;
     flex-direction: column;
-    align-items: flex-start;
     gap: 16px;
     border-radius: 18px;
     background: rgba(15, 23, 42, 0.96);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: var(--shadow);
   }
 
   .nav-links.active {
@@ -686,13 +672,20 @@ strong {
   .menu-btn {
     display: block;
   }
+
+  .profile-card img {
+    min-height: 430px;
+  }
+}
+
+@media (max-width: 650px) {
+  .concept-grid,
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-  .navbar {
-    padding: 16px 18px;
-  }
-
   .hero {
     padding: 125px 18px 70px;
   }
@@ -709,22 +702,8 @@ strong {
     width: 100%;
   }
 
-  .hero-card,
-  .about-box,
-  .intro-card,
-  .summary-card,
-  .reflection-box,
-  .matter-card {
-    padding: 24px;
-  }
-
-  body::after {
-    font-size: 11px;
-    padding: 95px 18px;
-  }
-
-  .thankyou-card {
-    padding: 55px 18px;
+  .profile-card img {
+    min-height: 360px;
   }
 
   .thankyou-card h2 {

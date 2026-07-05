@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header" id="header">
     <nav class="navbar">
       <a href="#home" class="logo">Zachary<span>.</span></a>
 
@@ -16,11 +16,12 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Me</a></li>
         <li><a href="#matter">Matter</a></li>
+        <li><a href="#concepts">Chemistry</a></li>
         <li><a href="#reflection">Reflection</a></li>
         <li><a href="#thankyou">Thank You</a></li>
       </ul>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <button class="menu-btn" id="menuBtn">☰</button>
     </nav>
   </header>
 
@@ -29,27 +30,42 @@
       <p class="tagline">General Chemistry Portfolio</p>
       <h1>Science, Matter, and Coding</h1>
       <p class="hero-text">
-        A professional science portfolio that connects General Chemistry concepts
-        with coding, logical thinking, and real-life examples of matter.
+        A professional portfolio that connects General Chemistry with coding,
+        logical thinking, measurement, atomic theory, and real-life examples of matter.
       </p>
 
       <div class="hero-buttons">
         <a href="#about" class="btn primary">View Portfolio</a>
         <a href="#matter" class="btn secondary">Explore Matter</a>
       </div>
+
+      <div class="hero-stats">
+        <div>
+          <h3>STEM</h3>
+          <p>Strand</p>
+        </div>
+        <div>
+          <h3>Gen Chem</h3>
+          <p>Subject Focus</p>
+        </div>
+        <div>
+          <h3>Coding</h3>
+          <p>Interest</p>
+        </div>
+      </div>
     </div>
 
     <div class="hero-card reveal">
       <div class="atom-mark">⚛</div>
-      <h3>STEM Student</h3>
+      <h3>Student Profile</h3>
       <h2>Zachary Navea</h2>
-      <p>Age 17 | Coding | General Chemistry</p>
+      <p>Age 17 | STEM | Coding | General Chemistry</p>
 
       <div class="code-box">
-        <span class="code-purple">const</span> student = {<br>
-        &nbsp;&nbsp;name: <span class="code-green">"Zachary Navea"</span>,<br>
-        &nbsp;&nbsp;strand: <span class="code-green">"STEM"</span>,<br>
-        &nbsp;&nbsp;focus: [<span class="code-green">"Coding"</span>, <span class="code-green">"Gen Chem"</span>]<br>
+        <span class="purple">const</span> portfolio = {<br>
+        &nbsp;&nbsp;student: <span class="green">"Zachary Navea"</span>,<br>
+        &nbsp;&nbsp;strand: <span class="green">"STEM"</span>,<br>
+        &nbsp;&nbsp;focus: [<span class="green">"Matter"</span>, <span class="green">"Atomic Theory"</span>, <span class="green">"Coding"</span>]<br>
         };
       </div>
     </div>
@@ -63,44 +79,56 @@
         <h2>About Me</h2>
       </div>
 
-      <div class="about-box reveal">
-        <p>
-          My name is <strong>Zachary Navea</strong>, and I am 17 years old.
-          I am a STEM student who is interested in coding and technology.
-          I enjoy learning how things work, especially when it involves
-          computers, programs, and logical thinking.
-        </p>
+      <div class="about-layout reveal">
+        <div class="profile-card">
+          <img src="profile.png" alt="Zachary Navea profile picture" />
 
-        <p>
-          Coding helps me practice creativity because I can create something
-          useful from simple ideas. I also like problem solving because it
-          challenges me to think carefully, analyze situations, and find the
-          best solution.
-        </p>
-
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>Strand</h3>
-            <p>STEM</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Hobbies</h3>
-            <p>Coding, exploring technology, and learning new digital skills.</p>
-          </div>
-
-          <div class="info-card">
-            <h3>Interests</h3>
-            <p>General Chemistry, problem solving, logical thinking, and computer programming.</p>
+          <div class="profile-info">
+            <span>STEM Student</span>
+            <h3>Zachary Navea</h3>
+            <p>Age 17 | Coding | General Chemistry</p>
           </div>
         </div>
 
-        <div class="skills">
-          <span>STEM</span>
-          <span>Coding</span>
-          <span>Technology</span>
-          <span>Problem Solving</span>
-          <span>General Chemistry</span>
+        <div class="about-box">
+          <p>
+            My name is <strong>Zachary Navea</strong>, and I am 17 years old.
+            I am a STEM student who is interested in coding and technology.
+            I enjoy learning how things work, especially when it involves
+            computers, programs, and logical thinking.
+          </p>
+
+          <p>
+            Coding helps me practice creativity because I can create something
+            useful from simple ideas. I also like problem solving because it
+            challenges me to think carefully, analyze situations, and find the
+            best solution.
+          </p>
+
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Strand</h3>
+              <p>STEM</p>
+            </div>
+
+            <div class="info-card">
+              <h3>Hobbies</h3>
+              <p>Coding, exploring technology, designing websites, and learning digital skills.</p>
+            </div>
+
+            <div class="info-card">
+              <h3>Interests</h3>
+              <p>General Chemistry, problem solving, logical thinking, programming, and technology.</p>
+            </div>
+          </div>
+
+          <div class="skills">
+            <span>STEM</span>
+            <span>Coding</span>
+            <span>Technology</span>
+            <span>Problem Solving</span>
+            <span>General Chemistry</span>
+          </div>
         </div>
       </div>
     </section>
@@ -165,6 +193,47 @@
           use or encounter every day can be described through their physical
           properties.
         </p>
+      </div>
+    </section>
+
+    <section class="section" id="concepts">
+      <div class="section-title reveal">
+        <span>Professional Add-on</span>
+        <h2>General Chemistry Connection</h2>
+      </div>
+
+      <div class="concept-grid">
+        <div class="concept-card reveal">
+          <h3>Measurement</h3>
+          <p>
+            Measurement helps describe matter accurately using numbers and units.
+            It makes scientific observations more reliable and organized.
+          </p>
+        </div>
+
+        <div class="concept-card reveal">
+          <h3>Atomic Theory</h3>
+          <p>
+            Atomic theory explains that matter is made of atoms. It helps us
+            understand why objects have different properties and behaviors.
+          </p>
+        </div>
+
+        <div class="concept-card reveal">
+          <h3>Fundamental Particles</h3>
+          <p>
+            Protons, neutrons, and electrons are important parts of atoms.
+            They help explain the structure and behavior of matter.
+          </p>
+        </div>
+
+        <div class="concept-card reveal">
+          <h3>Coding Connection</h3>
+          <p>
+            Coding and chemistry both use logic, patterns, and problem solving.
+            Like programming, science requires careful analysis and clear steps.
+          </p>
+        </div>
       </div>
     </section>
 
