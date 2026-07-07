@@ -65,6 +65,10 @@ body::after {
   pointer-events: none;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -667,6 +671,26 @@ strong {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* SWEET ALERT DESIGN */
+
+.my-swal-popup {
+  border-radius: 28px !important;
+  border: 1px solid rgba(34, 211, 238, 0.35) !important;
+  box-shadow: 0 25px 80px rgba(34, 211, 238, 0.18) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.my-swal-title {
+  color: #22d3ee !important;
+}
+
+.my-swal-image {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 4px solid rgba(34, 211, 238, 0.6) !important;
+  box-shadow: 0 0 35px rgba(34, 211, 238, 0.45) !important;
+}
+
 /* ANIMATION */
 
 .reveal {
@@ -704,16 +728,13 @@ strong {
     scroll-padding-top: 82px;
   }
 
-  body.menu-open {
-    overflow: hidden;
-  }
-
   .navbar {
     padding: 14px 18px;
   }
 
   .menu-btn {
     display: grid;
+    place-items: center;
   }
 
   .nav-links {

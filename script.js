@@ -92,27 +92,51 @@ function activeNavOnScroll() {
   });
 }
 
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-    }
-  );
+function setupRevealAnimation() {
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+      }
+    );
 
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
-} else {
-  revealElements.forEach((element) => {
-    element.classList.add("active");
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("active");
+    });
+  }
+}
+
+function showWelcomeAlert() {
+  if (typeof Swal === "undefined") return;
+
+  Swal.fire({
+    title: "Welcome to My Portfolio!",
+    text: "Hi, I am Zachary Navea. Explore my General Chemistry portfolio.",
+    imageUrl: "profile.png",
+    imageWidth: 180,
+    imageHeight: 180,
+    imageAlt: "Zachary Navea profile picture",
+    background: "rgba(15, 23, 42, 0.98)",
+    color: "#f8fafc",
+    confirmButtonText: "Explore Now",
+    confirmButtonColor: "#22d3ee",
+    customClass: {
+      popup: "my-swal-popup",
+      title: "my-swal-title",
+      image: "my-swal-image"
+    }
   });
 }
 
@@ -122,6 +146,11 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("load", () => {
+  setupRevealAnimation();
   headerScrollEffect();
   activeNavOnScroll();
+
+  setTimeout(() => {
+    showWelcomeAlert();
+  }, 600);
 });
