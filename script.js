@@ -123,8 +123,8 @@ function showWelcomeAlert() {
 
   Swal.fire({
     title: "Welcome to My Portfolio!",
-    text: "Hi, I am Zachary Navea. Explore my General Chemistry portfolio.",
-    imageUrl: "profile.png",
+    text: "Hi mam Crystel, I am Zachary Navea. Explore my General Chemistry portfolio.",
+    imageUrl: "profile",
     imageWidth: 180,
     imageHeight: 180,
     imageAlt: "Zachary Navea profile picture",
