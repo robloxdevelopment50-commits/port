@@ -140,10 +140,25 @@ function showWelcomeAlert() {
   });
 }
 
-window.addEventListener("scroll", () => {
+/* Smoother scroll performance */
+let ticking = false;
+
+function handleScroll() {
   headerScrollEffect();
   activeNavOnScroll();
-});
+  ticking = false;
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!ticking) {
+      window.requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  },
+  { passive: true }
+);
 
 window.addEventListener("load", () => {
   setupRevealAnimation();

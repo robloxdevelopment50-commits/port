@@ -11,12 +11,45 @@
 </head>
 <body>
 
-  <div class="game-bg">
+  <div class="game-bg" aria-hidden="true">
     <span class="cloud cloud-1"></span>
     <span class="cloud cloud-2"></span>
-    <span class="coin coin-1">●</span>
-    <span class="coin coin-2">●</span>
-    <span class="pixel-block">⚛</span>
+    <span class="cloud cloud-3"></span>
+
+    <span class="coin coin-1"></span>
+    <span class="coin coin-2"></span>
+    <span class="coin coin-3"></span>
+
+    <span class="pixel-block block-1">?</span>
+    <span class="pixel-block block-2">⚛</span>
+
+    <div class="pipe">
+      <span></span>
+    </div>
+
+    <div class="hill hill-1"></div>
+    <div class="hill hill-2"></div>
+
+    <div class="retro-hero">
+      <span class="hero-shadow"></span>
+      <span class="hero-hat"></span>
+      <span class="hero-head"></span>
+      <span class="hero-ear"></span>
+      <span class="hero-hair"></span>
+      <span class="hero-mustache"></span>
+      <span class="hero-shirt"></span>
+      <span class="hero-overall"></span>
+      <span class="hero-arm left"></span>
+      <span class="hero-arm right"></span>
+      <span class="hero-hand left"></span>
+      <span class="hero-hand right"></span>
+      <span class="hero-leg left"></span>
+      <span class="hero-leg right"></span>
+      <span class="hero-shoe left"></span>
+      <span class="hero-shoe right"></span>
+    </div>
+
+    <div class="game-ground"></div>
   </div>
 
   <header class="header" id="header">
@@ -32,7 +65,7 @@
         <li><a href="#thankyou">Thank You</a></li>
       </ul>
 
-      <button class="menu-btn" id="menuBtn">☰</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
     </nav>
   </header>
 
