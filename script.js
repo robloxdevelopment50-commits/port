@@ -123,8 +123,8 @@ function showWelcomeAlert() {
 
   Swal.fire({
     title: "Level 1: Welcome!",
-    text: "Hi, I am Zachary Navea. Start exploring my General Chemistry portfolio.",
-    imageUrl: "profile.png",
+    text: "Hi Mam Crystel, I am Zachary Navea. Start exploring my General Chemistry portfolio.",
+    imageUrl: "crystel.jpg",
     imageWidth: 180,
     imageHeight: 180,
     imageAlt: "Zachary Navea profile picture",
