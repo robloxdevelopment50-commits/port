@@ -122,16 +122,16 @@ function showWelcomeAlert() {
   if (typeof Swal === "undefined") return;
 
   Swal.fire({
-    title: "Welcome to My Portfolio!",
-    text: "Hi mam Crystel, I am Zachary Navea. Explore my General Chemistry portfolio.",
-    imageUrl: "crystel.jpg",
+    title: "Level 1: Welcome!",
+    text: "Hi, I am Zachary Navea. Start exploring my General Chemistry portfolio.",
+    imageUrl: "profile.png",
     imageWidth: 180,
     imageHeight: 180,
     imageAlt: "Zachary Navea profile picture",
-    background: "rgba(15, 23, 42, 0.98)",
-    color: "#f8fafc",
-    confirmButtonText: "Explore Now",
-    confirmButtonColor: "#22d3ee",
+    background: "#1b1b2f",
+    color: "#fff3c4",
+    confirmButtonText: "Start Game",
+    confirmButtonColor: "#ffd447",
     customClass: {
       popup: "my-swal-popup",
       title: "my-swal-title",
