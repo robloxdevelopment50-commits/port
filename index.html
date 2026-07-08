@@ -6,17 +6,29 @@
 
   <title>Zachary Navea | General Chemistry Portfolio</title>
 
-  <!-- SweetAlert2 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-
-  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="game-bg">
+    <span class="cloud cloud-1"></span>
+    <span class="cloud cloud-2"></span>
+
+    <span class="coin coin-1">●</span>
+    <span class="coin coin-2">●</span>
+    <span class="coin coin-3">●</span>
+
+    <span class="block block-1">?</span>
+    <span class="block block-2">⚛</span>
+
+    <span class="pipe pipe-1"></span>
+    <span class="pipe pipe-2"></span>
+  </div>
+
   <header class="header" id="header">
     <nav class="navbar">
-      <a href="#home" class="logo">Zachary Navea<span> 12 - Cirrus</span></a>
+      <a href="#home" class="logo">Zachary<span>.</span></a>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
@@ -38,12 +50,12 @@
       <h1>Science, Matter, and Coding</h1>
 
       <p class="hero-text">
-        A professional portfolio that connects General Chemistry with coding,
+        A fun retro-style portfolio that connects General Chemistry with coding,
         logical thinking, measurement, atomic theory, and real-life examples of matter.
       </p>
 
       <div class="hero-buttons">
-        <a href="#about" class="btn primary">View Portfolio</a>
+        <a href="#about" class="btn primary">Start Game</a>
         <a href="#matter" class="btn secondary">Explore Matter</a>
       </div>
 
@@ -68,15 +80,15 @@
     <div class="hero-card reveal">
       <div class="atom-mark">⚛</div>
 
-      <h3>Student Profile</h3>
+      <h3>Player Profile</h3>
       <h2>Zachary Navea</h2>
       <p>Age 17 | STEM | Coding | General Chemistry</p>
 
       <div class="code-box">
-        <span class="purple">const</span> portfolio = {<br>
-        &nbsp;&nbsp;student: <span class="green">"Zachary Navea"</span>,<br>
+        <span class="purple">const</span> player = {<br>
+        &nbsp;&nbsp;name: <span class="green">"Zachary Navea"</span>,<br>
         &nbsp;&nbsp;strand: <span class="green">"STEM"</span>,<br>
-        &nbsp;&nbsp;focus: [<span class="green">"Matter"</span>, <span class="green">"Atomic Theory"</span>, <span class="green">"Coding"</span>]<br>
+        &nbsp;&nbsp;skills: [<span class="green">"Matter"</span>, <span class="green">"Atomic Theory"</span>, <span class="green">"Coding"</span>]<br>
         };
       </div>
     </div>
@@ -86,7 +98,7 @@
 
     <section class="section" id="about">
       <div class="section-title reveal">
-        <span>Part 1</span>
+        <span>Level 1</span>
         <h2>About Me</h2>
       </div>
 
@@ -146,7 +158,7 @@
 
     <section class="section" id="matter">
       <div class="section-title reveal">
-        <span>Part 2</span>
+        <span>Level 2</span>
         <h2>Matter in My Life</h2>
       </div>
 
@@ -209,7 +221,7 @@
 
     <section class="section" id="concepts">
       <div class="section-title reveal">
-        <span>Professional Add-on</span>
+        <span>Bonus Level</span>
         <h2>General Chemistry Connection</h2>
       </div>
 
@@ -250,7 +262,7 @@
 
     <section class="section" id="reflection">
       <div class="section-title reveal">
-        <span>Part 3</span>
+        <span>Final Level</span>
         <h2>Reflection</h2>
       </div>
 
@@ -285,7 +297,7 @@
 
     <section class="thankyou-section" id="thankyou">
       <div class="thankyou-card reveal">
-        <p>End of Portfolio</p>
+        <p>Game Complete</p>
         <h2>THANK YOU</h2>
         <span>Science • Coding • General Chemistry</span>
       </div>
@@ -297,10 +309,7 @@
     <p>© 2026 Zachary Navea | General Chemistry Portfolio</p>
   </footer>
 
-  <!-- SweetAlert2 JS -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <!-- Main JS -->
   <script src="script.js"></script>
 </body>
 </html>
